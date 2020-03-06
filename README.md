@@ -4,14 +4,15 @@ Generate Graphviz files from Netbox data to create virtual labs of your producti
 This is currently used in a Cumulus VX lab to run unit tests in our CI pipeline.
 
 Requirements for data modeling:
- - Any connections you want simulated need to be mapped in Netbox.
- - You need to define what types of devices you want to simulate. This can either be by device role, platform, etc.
+ - Any connections you want simulated need to be mapped in Netbox. (https://netbox.readthedocs.io/en/stable/core-functionality/devices/#cables)
+ - You need to define what types of devices you want to simulate. This can either be by device role, platform, etc. (See the cumulusSwitches variable definition if you want to edit what devices are pulled from Netbox)
  - If you have physical interfaces not currently defined in this script you'll need to add them. Subinterfaces,port-channels,VLANs, etc. are NOT physical interfaces, they are logical constructs.
  
 Setup:
  - pip3 install -r requirements.txt
  - Add your Netbox API (preferably read only) key to the variable in the top of the script
- - Place the file in the directory you want to output the topology file (picking a destination file path is coming)
+ - Add your Netbox URL e.g. "https://netbox.company.com/"
+ - Edit the "topologyPath" variable if you want the topology file to go somewhere besides the PWD.
  
 Usage:
 python3 netbox_topology_generator.py
