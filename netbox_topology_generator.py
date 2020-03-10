@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-import os
-import subprocess
 import requests
 import pygraphviz as pgv
 
